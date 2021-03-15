@@ -18,13 +18,3 @@ To transform this skeleton in your plugin your may want to:
 * Publish your plugin to the Hansken community!
 
 The Hansken extraction plugin developer guide contains further information on how to get started.
-
-
-## Building this plugin
-
-To build this plugin into a Docker image that can be used in future releases
-of Hansken, you can run the following command:
-  `tox && docker build -t your_plugin_name`
-
-Verify that your plugin works as expected by running:
-  `tox -e verify-plugin your_plugin_name`

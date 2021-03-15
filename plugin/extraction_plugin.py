@@ -17,7 +17,7 @@ class Plugin(ExtractionPlugin):
             author=Author('Your name', 'your@email.address', 'your organisation'),
             maturity=MaturityLevel.PROOF_OF_CONCEPT,
             webpage_url='', #  e.g. url to the code repository of your plugin
-            matcher='file.extension=txt'
+            matcher='file.extension=txt and $data.type=raw'
         )
         return plugin_info
 
