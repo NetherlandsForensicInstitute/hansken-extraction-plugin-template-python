@@ -6,6 +6,7 @@ from logbook import Logger
 
 log = Logger(__name__)
 
+
 class Plugin(ExtractionPlugin):
 
     def plugin_info(self):
@@ -16,8 +17,8 @@ class Plugin(ExtractionPlugin):
             description='description of your plugin',
             author=Author('Your name', 'your@email.address', 'your organisation'),
             maturity=MaturityLevel.PROOF_OF_CONCEPT,
-            webpage_url='', #  e.g. url to the code repository of your plugin
-            matcher='file.extension=txt and $data.type=raw'
+            webpage_url='',  # e.g. url to the code repository of your plugin
+            matcher='* and $data.type=raw'
         )
         return plugin_info
 
