@@ -6,7 +6,7 @@ package_name = "extraction_plugin_skeleton"
 version_string = "0.0.0"
 
 dependencies = [
-    "hansken-extraction-plugin==0.1.0",  # the plugin SDK
+    "hansken-extraction-plugin==0.1.2",  # the plugin SDK
 ]
 
 setup(
