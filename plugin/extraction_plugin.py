@@ -1,5 +1,5 @@
 from hansken_extraction_plugin.api.extraction_plugin import ExtractionPlugin
-from hansken_extraction_plugin.api.plugin_info import Author, PluginInfo, MaturityLevel
+from hansken_extraction_plugin.api.plugin_info import Author, MaturityLevel, PluginInfo
 from logbook import Logger
 
 log = Logger(__name__)
