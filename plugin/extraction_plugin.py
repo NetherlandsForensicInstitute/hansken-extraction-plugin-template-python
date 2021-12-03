@@ -11,12 +11,12 @@ class Plugin(ExtractionPlugin):
         plugin_info = PluginInfo(
             self,
             version='0.0.0',
+            id=PluginId(domain='domain', category='category', name='your_plugin_name'),
             description='description of your plugin',
             author=Author('Your name', 'your@email.address', 'your organisation'),
             maturity=MaturityLevel.PROOF_OF_CONCEPT,
             webpage_url='',  # e.g. url to the code repository of your plugin
             matcher='$data.type=raw',  # add the query for the types of traces your plugin should match
-            id=PluginId('domain', 'category', 'your_plugin_name'),
             license='Apache License 2.0'
         )
         return plugin_info
