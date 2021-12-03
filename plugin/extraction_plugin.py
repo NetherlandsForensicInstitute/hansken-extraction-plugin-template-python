@@ -15,7 +15,7 @@ class Plugin(ExtractionPlugin):
             author=Author('Your name', 'your@email.address', 'your organisation'),
             maturity=MaturityLevel.PROOF_OF_CONCEPT,
             webpage_url='',  # e.g. url to the code repository of your plugin
-            matcher='$data.type=raw',
+            matcher='$data.type=raw',  # add the query for the types of traces your plugin should match
             id=PluginId('domain', 'category', 'your_plugin_name'),
             license='Apache License 2.0'
         )
