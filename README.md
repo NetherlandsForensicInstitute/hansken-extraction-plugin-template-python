@@ -1,4 +1,4 @@
-# Hansken extraction skeleton plugin for Python
+# Hansken Extraction Plugin skeleton for Python based on version 0.4.11
 
 This repository contains a skeleton for a Hansken extraction plugin written in Python.
 This skeleton plugin is a minimal but complete example of a plugin implementation,
