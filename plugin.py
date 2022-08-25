@@ -1,5 +1,6 @@
 from hansken_extraction_plugin.api.extraction_plugin import ExtractionPlugin
 from hansken_extraction_plugin.api.plugin_info import Author, MaturityLevel, PluginId, PluginInfo
+from hansken_extraction_plugin.runtime.extraction_plugin_runner import run_with_hanskenpy
 from logbook import Logger
 
 log = Logger(__name__)
@@ -9,9 +10,8 @@ class Plugin(ExtractionPlugin):
 
     def plugin_info(self):
         plugin_info = PluginInfo(
-            self,
-            version='0.0.0',
             id=PluginId(domain='domain', category='category', name='your_plugin_name'),
+            version='0.0.0',
             description='description of your plugin',
             author=Author('Your name', 'your@email.address', 'your organisation'),
             maturity=MaturityLevel.PROOF_OF_CONCEPT,
@@ -24,3 +24,10 @@ class Plugin(ExtractionPlugin):
     def process(self, trace, data_context):
         log.info(f"processing trace {trace.get('name')}")
         # Add your plugin implementation here
+
+
+if __name__ == '__main__':
+    # optional main method to run your plugin with Hansken.py
+    # see detail at:
+    #  https://netherlandsforensicinstitute.github.io/hansken-extraction-plugin-sdk-documentation/latest/dev/python/hanskenpy.html
+    run_with_hanskenpy(Plugin)
