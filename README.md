@@ -10,10 +10,10 @@ The [Hansken Extraction Plugins for plugin developers documentation](https://net
 
 To transform this skeleton in your plugin your may want to:
 
-* Update the plugin info in [`plugin/plugin.py`](plugin/plugin.py)
+* Update the plugin info in [`plugin.py`](plugin.py)
 * Create test input data in the folder [`testdata/input`](testdata/input)
   (refer to the SDK manual for more details on how to define test data)
-* Implement your plugin `process()` logic in [`plugin/plugin.py`](plugin/plugin.py)
+* Implement your plugin `process()` logic in [`plugin.py`](plugin.py)
 * Add your plugin dependencies to [`requirements.in`](requirements.in)
   and regenerate `requirements.txt` by calling `tox -e upgrade`
 * Add any system dependencies to the [`Dockerfile`](Dockerfile)
