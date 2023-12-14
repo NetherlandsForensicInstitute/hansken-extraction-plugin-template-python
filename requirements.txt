@@ -1,40 +1,40 @@
-certifi==2023.5.7
+certifi==2023.11.17
     # via requests
-charset-normalizer==3.1.0
+charset-normalizer==3.3.2
     # via requests
 decorator==5.1.1
     # via hansken
-grpcio==1.54.2
+grpcio==1.60.0
     # via hansken-extraction-plugin
-hansken==2023.5.1
+hansken==2023.11.28
     # via hansken-extraction-plugin
-hansken-extraction-plugin==0.6.3
+hansken-extraction-plugin==0.7.1
     # via -r requirements.in
-idna==3.4
+idna==3.6
     # via requests
-ijson==3.2.0.post0
+ijson==3.2.3
     # via hansken
-iso8601==1.1.0
+iso8601==2.1.0
     # via hansken
-logbook==1.5.3
+logbook==1.7.0.post0
     # via
     #   hansken
     #   hansken-extraction-plugin
-more-itertools==9.1.0
+more-itertools==10.1.0
     # via hansken
-protobuf==4.23.0
+protobuf==4.25.1
     # via hansken-extraction-plugin
 python-dateutil==2.8.2
     # via hansken
-pytz==2023.3
+pytz==2023.3.post1
     # via hansken-extraction-plugin
-requests==2.30.0
+requests==2.31.0
     # via hansken
 six==1.16.0
     # via python-dateutil
 tabulate==0.9.0
     # via hansken
-typing-extensions==4.5.0
+typing-extensions==4.9.0
     # via hansken-extraction-plugin
-urllib3==2.0.2
+urllib3==2.1.0
     # via requests
