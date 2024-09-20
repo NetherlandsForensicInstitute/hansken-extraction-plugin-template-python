@@ -1,5 +1,5 @@
 from hansken_extraction_plugin.api.extraction_plugin import ExtractionPlugin
-from hansken_extraction_plugin.api.plugin_info import Author, MaturityLevel, PluginId, PluginInfo
+from hansken_extraction_plugin.api.plugin_info import Author, MaturityLevel, PluginId, PluginInfo, PluginResources
 from hansken_extraction_plugin.runtime.extraction_plugin_runner import run_with_hanskenpy
 from logbook import Logger
 
@@ -17,7 +17,8 @@ class Plugin(ExtractionPlugin):
             maturity=MaturityLevel.PROOF_OF_CONCEPT,
             webpage_url='',  # e.g. url to the code repository of your plugin
             matcher='$data.type=raw',  # add the query for the types of traces your plugin should match
-            license='Apache License 2.0'
+            license='Apache License 2.0',
+            resources=PluginResources(maximum_cpu=2, maximum_memory=512, maximum_workers=6)
         )
         return plugin_info
 

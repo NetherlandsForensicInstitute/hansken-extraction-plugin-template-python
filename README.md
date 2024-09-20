@@ -1,4 +1,4 @@
-# Hansken Extraction Plugin skeleton for Python based on version 0.7.1
+# Hansken Extraction Plugin skeleton for Python based on version 0.8.2
 
 This repository contains a template for a Hansken extraction plugin written in Python.
 This template is a minimal but complete example of a plugin implementation, including all required build steps.
@@ -12,7 +12,7 @@ To transform this skeleton in your plugin your may want to:
 
 * Update the plugin info in [`plugin.py`](plugin.py)
 * Create test input data in the folder [`testdata/input`](testdata/input)
-  (refer to the SDK manual for more details on how to define test data)
+  (refer to the [SDK manual for more details on how to define test data](https://netherlandsforensicinstitute.github.io/hansken-extraction-plugin-sdk-documentation/latest/dev/concepts/test_framework.html))
 * Implement your plugin `process()` logic in [`plugin.py`](plugin.py)
 * Add your plugin dependencies to [`requirements.in`](requirements.in)
   and regenerate `requirements.txt` by calling `tox -e upgrade`
@@ -26,7 +26,17 @@ Tox commands that may be useful:
 * `tox`: runs your tests
 * `tox -e integration-test`: runs your tests against the packaged version of your plugin (requires Docker)
 * `tox -e regenerate`: regenerates the expected test results (use after you update your plugin)
-* `tox -e upgrade`: regenerates `requirements.txt` from [`requirements.in`](requirements.in)
 * `tox -e package`: creates a extraction plugin OCI/Docker image that can be published to Hansken (requires Docker)
+* `tox -e upgrade`: regenerates `requirements.txt` from [`requirements.in`](requirements.in)
 
 Note: see the readme text in the [`Dockerfile`](Dockerfile) if you need to set proxies or private Python package registries for building a plugin.
+
+
+> [!IMPORTANT]  
+> Plugins based on this template require Hansken version `47.22.0` or higher.
+> If your Hansken version is lower, please use the template tagged with `version/0.7.1`, or downgrade the used SDK in the following way:
+>  * set the `hansken-extraction-plugin` version to `0.7.4` in [requirements.in](requirements.in)
+>  * and then run:
+>    ```shell
+>    tox -e upgrade
+>    ```

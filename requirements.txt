@@ -1,18 +1,20 @@
-certifi==2023.11.17
+certifi==2024.8.30
     # via requests
 charset-normalizer==3.3.2
     # via requests
 decorator==5.1.1
     # via hansken
-grpcio==1.60.0
+docker==7.1.0
     # via hansken-extraction-plugin
-hansken==2023.11.28
+grpcio==1.66.1
     # via hansken-extraction-plugin
-hansken-extraction-plugin==0.7.1
+hansken==2024.7.15
+    # via hansken-extraction-plugin
+hansken-extraction-plugin==0.8.3
     # via -r requirements.in
-idna==3.6
+idna==3.10
     # via requests
-ijson==3.2.3
+ijson==3.3.0
     # via hansken
 iso8601==2.1.0
     # via hansken
@@ -20,21 +22,28 @@ logbook==1.7.0.post0
     # via
     #   hansken
     #   hansken-extraction-plugin
-more-itertools==10.1.0
+more-itertools==10.5.0
     # via hansken
-protobuf==4.25.1
+protobuf==5.28.2
     # via hansken-extraction-plugin
-python-dateutil==2.8.2
+python-dateutil==2.9.0.post0
     # via hansken
-pytz==2023.3.post1
+pytz==2024.2
     # via hansken-extraction-plugin
-requests==2.31.0
+requests==2.32.3
+    # via
+    #   docker
+    #   hansken
+    #   requests-toolbelt
+requests-toolbelt==1.0.0
     # via hansken
 six==1.16.0
     # via python-dateutil
 tabulate==0.9.0
     # via hansken
-typing-extensions==4.9.0
+typing-extensions==4.12.2
     # via hansken-extraction-plugin
-urllib3==2.1.0
-    # via requests
+urllib3==2.2.3
+    # via
+    #   docker
+    #   requests
