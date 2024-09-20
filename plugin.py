@@ -18,7 +18,7 @@ class Plugin(ExtractionPlugin):
             webpage_url='',  # e.g. url to the code repository of your plugin
             matcher='$data.type=raw',  # add the query for the types of traces your plugin should match
             license='Apache License 2.0',
-            resources=PluginResources(maximum_cpu=2, maximum_memory=512, maximum_workers=6)
+            resources=PluginResources(maximum_cpu=2, maximum_memory=512, maximum_workers=6),
         )
         return plugin_info
 
