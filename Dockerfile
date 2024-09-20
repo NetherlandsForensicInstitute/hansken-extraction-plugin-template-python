@@ -10,26 +10,23 @@
 # Stage 1: build the plugin
 # use a 'fat' image to setup the dependencies we'll need
 
-FROM python:3.10 AS builder
+FROM python:3.12 AS builder
 ARG PIP_INDEX_URL=https://pypi.org/simple/
-# build wheels for all dependencies in /app/dist (compiling binary distributions for sdists containing non-python code)
-RUN mkdir --parents /app/dist
-COPY requirements.txt /app/requirements.txt
-RUN pip wheel --requirement /app/requirements.txt --wheel-dir /app/dist
+RUN python -m venv /venv
+ENV PATH="/venv/bin:$PATH"
+COPY requirements.txt /requirements.txt
+RUN pip install -Ur /requirements.txt
 
 
 ###############################################################################
 # Stage 2: create the distributable plugin image
 # use a 'slim' image for running the actual plugin
 
-FROM python:3.10-slim
-# copy and install the dependencies in wheel form from the builder
-RUN mkdir --parents /app/dist
-COPY --from=builder /app/dist/*.whl /app/dist/
-RUN pip install --no-index /app/dist/*.whl
+FROM python:3.12-slim
+COPY --from=builder /venv /venv
+ENV PATH="/venv/bin:$PATH"
 
-# copy the actual plugin file, run that on port 8999
-COPY plugin.py /app
+COPY plugin.py /app/
 EXPOSE 8999
-ENTRYPOINT ["/usr/local/bin/serve_plugin", "-v"]
+ENTRYPOINT ["serve_plugin", "-v"]
 CMD ["/app/plugin.py", "8999"]
