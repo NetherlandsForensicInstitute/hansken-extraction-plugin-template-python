@@ -1,2 +1,8 @@
-.tox
+.docker
+.git
 .runner
+.tox
+.Dockerignore
+.gitignore
+testdata
+venv
