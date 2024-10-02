@@ -6,7 +6,7 @@ decorator==5.1.1
     # via hansken
 docker==7.1.0
     # via hansken-extraction-plugin
-grpcio==1.66.1
+grpcio==1.66.2
     # via hansken-extraction-plugin
 hansken==2024.7.15
     # via hansken-extraction-plugin
