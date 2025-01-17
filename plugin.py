@@ -38,5 +38,5 @@ if __name__ == '__main__':
     # The transformer can be found in when you expand the plugin in the extraction tools
     # the transformers can be accessed with the /tools/transformers URL in HANSKEN
     @transformer
-    def example_transformer_increment_by_one(self, number: int) -> int:
+    def example_transformer(self, number: int) -> int:
         return number + 1
