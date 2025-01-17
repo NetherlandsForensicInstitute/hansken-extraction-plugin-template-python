@@ -14,6 +14,7 @@ To transform this skeleton in your plugin your may want to:
 * Create test input data in the folder [`testdata/input`](testdata/input)
   (refer to the [SDK manual for more details on how to define test data](https://netherlandsforensicinstitute.github.io/hansken-extraction-plugin-sdk-documentation/latest/dev/concepts/test_framework.html))
 * Implement your plugin `process()` logic in [`plugin.py`](plugin.py)
+* implement your own @transformers
 * Add your plugin dependencies to [`requirements.in`](requirements.in)
   and regenerate `requirements.txt` by calling `tox -e upgrade`
 * Add any system dependencies to the [`Dockerfile`](Dockerfile)
