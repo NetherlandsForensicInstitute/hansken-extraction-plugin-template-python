@@ -33,12 +33,6 @@ class Plugin(ExtractionPlugin):
         # Add your plugin implementation here
 
 
-if __name__ == '__main__':
-    # optional main method to run your plugin with Hansken.py
-    # see detail at:
-    #  https://netherlandsforensicinstitute.github.io/hansken-extraction-plugin-sdk-documentation/latest/dev/python/hanskenpy.html
-    run_with_hanskenpy(Plugin)
-
     @transformer
     def text_to_features(self, text: str) -> str:
         string = [str, ":)"]
@@ -83,4 +77,11 @@ if __name__ == '__main__':
     @transformer
     def check_map_contain_hansken(self, map: Mapping) -> bool:
         return map.__contains__("hansken")
+
+if __name__ == '__main__':
+    # optional main method to run your plugin with Hansken.py
+    # see detail at:
+    #  https://netherlandsforensicinstitute.github.io/hansken-extraction-plugin-sdk-documentation/latest/dev/python/hanskenpy.html
+    run_with_hanskenpy(Plugin)
+
 
