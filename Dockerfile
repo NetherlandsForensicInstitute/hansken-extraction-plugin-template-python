@@ -11,12 +11,14 @@
 # use a 'fat' image to setup the dependencies we'll need
 
 FROM python:3.13 AS builder
-ARG PIP_INDEX_URL=https://pypi.org/simple/
+ARG PIP_INDEX_URL= https://nexus.dev.holmes.nl/repository/pypi-all/simple
 RUN python -m venv /venv
 ENV PATH="/venv/bin:$PATH"
 COPY requirements.txt /requirements.txt
 RUN pip install -Ur /requirements.txt
 
+LABEL maintainer="k.lee@nfi.nl"
+LABEL hansken.extraction.plugin.name="simple-plugin"
 
 ###############################################################################
 # Stage 2: create the distributable plugin image
