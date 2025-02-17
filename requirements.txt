@@ -10,7 +10,7 @@ grpcio==1.70.0
     # via hansken-extraction-plugin
 hansken==2024.12.4
     # via hansken-extraction-plugin
-hansken-extraction-plugin==0.9.3
+hansken-extraction-plugin==0.9.4
     # via -r requirements.in
 idna==3.10
     # via requests

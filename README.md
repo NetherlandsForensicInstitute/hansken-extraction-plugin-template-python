@@ -1,4 +1,4 @@
-# Hansken Extraction Plugin template for Python based on version 0.9.3
+# Hansken Extraction Plugin template for Python based on version 0.9.4
 
 This repository contains a template for a Hansken extraction plugin written in Python.
 This template is a minimal but complete example of a plugin implementation, including all required build steps.
