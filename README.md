@@ -1,4 +1,4 @@
-# Hansken Extraction Plugin template for Python based on version 0.8.3
+# Hansken Extraction Plugin template for Python based on version 0.9.4
 
 This repository contains a template for a Hansken extraction plugin written in Python.
 This template is a minimal but complete example of a plugin implementation, including all required build steps.
@@ -14,6 +14,8 @@ To transform this skeleton in your plugin your may want to:
 * Create test input data in the folder [`testdata/input`](testdata/input)
   (refer to the [SDK manual for more details on how to define test data](https://netherlandsforensicinstitute.github.io/hansken-extraction-plugin-sdk-documentation/latest/dev/concepts/test_framework.html))
 * Implement your plugin `process()` logic in [`plugin.py`](plugin.py)
+* (Optional) Implement your own transformers(https://netherlandsforensicinstitute.github.io/hansken-extraction-plugin-sdk-documentation/latest/dev/python/transformers.html) in the example_transformer() [`plugin.py`](plugin.py),
+  or remove the transformer method from the plugin.
 * Add your plugin dependencies to [`requirements.in`](requirements.in)
   and regenerate `requirements.txt` by calling `tox -e upgrade`
 * Add any system dependencies to the [`Dockerfile`](Dockerfile)
