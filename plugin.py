@@ -28,11 +28,12 @@ class Plugin(ExtractionPlugin):
         # Add your plugin implementation here
 
     @transformer
-    def example_transformer(self, number: int) -> int:
-        # Optional transformer method to run this method with a REST call
-        # See detail at:
+    def example_transformer(self, name: str) -> str:
+        # Optional transformer method that can be executed on-demand via the Hansken REST API.
+        # Multiple argument types and return types are supported.
+        # For more information see:
         #  https://netherlandsforensicinstitute.github.io/hansken-extraction-plugin-sdk-documentation/latest/dev/python/transformers.html
-        return number + 1
+        return f"Hello {name}"
 
 if __name__ == '__main__':
     # Optional main method to run your plugin with Hansken.py
