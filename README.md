@@ -33,12 +33,13 @@ Tox commands that may be useful:
 
 Note: see the readme text in the [`Dockerfile`](Dockerfile) if you need to set proxies or private Python package registries for building a plugin.
 
+> [!TIP]
+> If you want to update your plugin to a newer Hansken Plugin SDK version, update the `hansken-extraction-plugin` version in [`requirements.in`](requirements.in), and then run:
+>
+> ```shell
+> tox -e upgrade
+> ```
 
 > [!IMPORTANT]  
 > Plugins based on this template require Hansken version `47.22.0` or higher.
-> If your Hansken version is lower, please use the template tagged with `version/0.7.1`, or downgrade the used SDK in the following way:
->  * set the `hansken-extraction-plugin` version to `0.7.4` in [requirements.in](requirements.in)
->  * and then run:
->    ```shell
->    tox -e upgrade
->    ```
+> If your Hansken version is lower, please update the Hansken Plugin SDK version to `0.7.4`.
