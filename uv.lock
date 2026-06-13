@@ -135,7 +135,7 @@ wheels = [
 [[package]]
 name = "hansken-extraction-plugin-template-python"
 version = "0.1.0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "certifi" },
     { name = "charset-normalizer" },
