@@ -1,0 +1,52 @@
+[project]
+name = "hansken-extraction-plugin-template-python"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "certifi==2026.5.20",
+    "charset-normalizer==3.4.7",
+    "decorator==5.3.1",
+    "docker==7.1.0",
+    "grpcio==1.81.0",
+    "hansken==2026.5.27",
+    "hansken-extraction-plugin==0.10.0",
+    "idna==3.18",
+    "ijson==3.5.0",
+    "iso8601==2.1.0",
+    "logbook==1.9.2",
+    "more-itertools==11.1.0",
+    "poethepoet>=0.46.0",
+    "protobuf==7.35.1",
+    "python-dateutil==2.9.0.post0",
+    "pytz==2026.2",
+    "requests==2.34.2",
+    "requests-toolbelt==1.0.0",
+    "six==1.17.0",
+    "tabulate==0.10.0",
+    "typing-extensions==4.15.0",
+    "urllib3==2.7.0",
+]
+
+[dependency-groups]
+dev = [
+    "poethepoet>=0.46.0"
+]
+
+[tool.poe.tasks]
+test = "uv run test_plugin --standalone plugin.py"
+regenerate = "uv run test_plugin --standalone plugin.py --regenerate"
+package = "uv run build_plugin . "
+
+[tool.poe.tasks.integration-test]
+sequence = [
+    { cmd = "uv run build_plugin . plugin-to-test" },
+    { cmd = "uv run test_plugin --docker plugin-to-test" },
+]
+
+[tool.poe.tasks.upgrade]
+sequence = [
+    { cmd = "uv lock" },
+    { cmd = "uv sync" },
+]

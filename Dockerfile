@@ -12,10 +12,15 @@
 
 FROM python:3.13 AS builder
 ARG PIP_INDEX_URL=https://pypi.org/simple/
+ENV UV_INDEX_URL=${PIP_INDEX_URL}
 RUN python -m venv /venv
+ENV VIRTUAL_ENV="/venv"
+ENV UV_PROJECT_ENVIRONMENT="/venv"
 ENV PATH="/venv/bin:$PATH"
-COPY requirements.txt /requirements.txt
-RUN pip install -Ur /requirements.txt
+RUN pip install uv
+WORKDIR /app
+COPY pyproject.toml uv.lock /app/
+RUN uv sync --frozen --no-install-project
 
 
 ###############################################################################
