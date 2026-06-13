@@ -25,6 +25,7 @@ To transform this skeleton in your plugin your may want to:
 
 Tox commands that may be useful:
 * `poe build`: builds the python package to `./dist`.
+* `poe lint`: runs the ruff check command. Configure the ruff linting in the `pyproject.toml` file.
 * `poe tests`: runs your tests
 * `poe integration-test`: runs your tests against the packaged version of your plugin (requires Docker)
 * `poe regenerate`: regenerates the expected test results (use after you update your plugin)
@@ -33,8 +34,8 @@ Tox commands that may be useful:
 
 Note: see the readme text in the [`Dockerfile`](Dockerfile) if you need to set proxies or private Python package registries for building a plugin.
 
-> [TIP] If you want to pass in additional arguments to the  poe tasks separate poe args with `--`. FOr example:
-> `poe package -- -t docker_image_tag`
+> [TIP] If you want to pass in additional arguments to the poe tasks separate poe args with `--`. For example:
+> `poe package -- --build-arg=MY_ARG=my_value`
 
 
 > [!TIP]

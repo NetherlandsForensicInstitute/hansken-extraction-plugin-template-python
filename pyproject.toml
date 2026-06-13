@@ -38,14 +38,21 @@ packages = ["hansken_extraction_plugin_template_python"]
 
 [dependency-groups]
 dev = [
-    "poethepoet>=0.46.0"
+    "poethepoet>=0.46.0",
+    "ruff>=0.15.17",
 ]
 
 [tool.poe.tasks]
+lint = "uv run ruff check"
 build = "uv build"
 test = "uv run test_plugin --standalone plugin.py"
 regenerate = "uv run test_plugin --standalone plugin.py --regenerate"
-package = "uv run build_plugin . "
+
+[tool.poe.tasks.package]
+sequence = [
+    { cmd = "uv build" },
+    { cmd = "uv run build_plugin ." }
+]
 
 [tool.poe.tasks.integration-test]
 sequence = [
@@ -58,3 +65,53 @@ sequence = [
     { cmd = "uv lock" },
     { cmd = "uv sync" },
 ]
+
+[tool.ruff]
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+]
+
+line-length = 140
+indent-width = 4
+
+[tool.ruff.lint]
+# Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`) codes by default.
+# Unlike Flake8, Ruff doesn't enable pycodestyle warnings (`W`) or
+# McCabe complexity (`C901`) by default.
+select = [
+    "E4",
+    "E5",
+    "E7",
+    "E9",
+    "F",
+    "PLC"
+]
+ignore = []
+
+
